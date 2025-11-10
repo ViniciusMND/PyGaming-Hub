@@ -15,22 +15,60 @@ Um launcher de jogos educacionais feitos em Python, desenvolvido com a bibliotec
 
 ## 🕹️ Como Adicionar Seus Próprios Jogos 
 
-Para que o PyGaming Hub detecte seu jogo educacional, basta seguir esta estrutura de pastas: ``` PyGaming Hub/ ├── games/ │   └── MeuNovoJogo/       <-- 1. Crie uma pasta para seu jogo │       ├── main.py        <-- 2. O script principal do seu jogo │       └── data.inf       <-- 3. O arquivo de metadados ├── conf/ └── main.py                <-- O launcher principal ``` O arquivo `data.inf` é essencial e deve ter o seguinte formato: ```ini [Game] nome = Nome de Exibição do Jogo autores = Nome do Autor 1, Autor 2 ``` O script `main.py` do seu jogo (como o "Simple Mover" de exemplo) deve ser capaz de ler o arquivo `conf/conf.ini` da raiz do projeto para carregar as configurações de controle e resolução. --- 
+Para que o PyGaming Hub detecte seu jogo educacional, basta seguir esta estrutura de pastas: 
+```
+PyGaming Hub/
+├── games/
+│   └── MeuNovoJogo/       <-- 1. Crie uma pasta para seu jogo
+│       ├── main.py        <-- 2. O script principal do seu jogo
+│       └── data.inf       <-- 3. O arquivo de metadados
+├── conf/
+└── main.py                <-- O launcher principal
+``` 
+
+O arquivo `data.inf` é essencial e deve ter o seguinte formato: 
+```
+ini
+[Game]
+nome = Nome de Exibição do Jogo
+autores = Nome do Autor 1, Autor 2 
+``` 
+
+O script `main.py` do seu jogo (como o "Simple Mover" de exemplo) deve ser capaz de ler o arquivo `conf/conf.ini` da raiz do projeto para carregar as configurações de controle e resolução. --- 
 
 ## 🚀 Como Executar 
 Você precisará do Python 3 e da biblioteca Pygame instalados. 
-1. **Clone este repositório:** ```bash git clone https://github.com/seu-usuario/pygaming-hub.git cd pygaming-hub ```
-2. **(Opcional) Crie um ambiente virtual:** ```bash python -m venv venv source venv/bin/activate  
-
-# No Windows: 
-venv\Scripts\activate ``` 3. **Instale as dependências:** ```bash pip install pygame ``` 4. **Execute o console:** ```bash python main.py ``` Na primeira execução, a pasta `conf/` e o arquivo `conf.ini` com as configurações padrão serão criados automaticamente. --- 
+1. **Clone este repositório:**
+```
+bash git clone https://github.com/seu-usuario/pygaming-hub.git
+cd pygaming-hub
+```
+2. **(Opcional) Crie um ambiente virtual:**
+```
+bash
+python -m venv venv
+source venv/bin/activate  # No Windows: venv\Scripts\activate
+```
+3. **Instale as dependências:**
+```
+bash
+pip install pygame
+```
+5. **Execute o console:**
+```
+bash python main.py
+```
+Na primeira execução, a pasta `conf/` e o arquivo `conf.ini` com as configurações padrão serão criados automaticamente. --- 
 
 ## 🔧 Configuração 
-Todas as configurações do console e dos jogos são controladas pelo arquivo `conf/conf.ini`: * `[Display]`: `width`, `height`, `fullscreen`. * `[Controls]`: `up`, `down`, `left`, `right`, `action_a`, `action_b`, `pause`. * `[Info]`: `authors` (o autor do console). --- 
+Todas as configurações do console e dos jogos são controladas pelo arquivo `conf/conf.ini`: 
+* `[Display]`: `width`, `height`, `fullscreen`. 
+* `[Controls]`: `up`, `down`, `left`, `right`, `action_a`, `action_b`, `pause`. 
+* `[Info]`: `authors` (o autor do console). --- 
 
 ## ✍️ Créditos 
 * **Autor do Console (PyGaming Hub):** Wilson Cosmo
-* * **Autores dos Jogos:** Os créditos de cada jogo são carregados dinamicamente a partir dos seus respectivos arquivos `data.inf` e são exibidos na tela "Sobre" do console. --- 
+* **Autores dos Jogos:** Os créditos de cada jogo são carregados dinamicamente a partir dos seus respectivos arquivos `data.inf` e são exibidos na tela "Sobre" do console. --- 
 
 ## 📄 Licença 
 Este projeto está sob a licença GNU. Veja o arquivo `LICENSE` para mais detalhes.
